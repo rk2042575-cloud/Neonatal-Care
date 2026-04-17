@@ -1,0 +1,32 @@
+1. results.csv
+This is the most important data file in the repository. It contains the epoch-by-epoch training logs.
+
+Contents: Columns for train/box_loss, train/cls_loss, metrics/precision, metrics/recall, and metrics/mAP50.
+
+Purpose: It serves as the primary source for evaluating the model's accuracy and was used to generate the final performance audit.
+
+2. detect.py
+This is the inference script used to run the trained model on new, unseen images.
+
+Contents: Python code that loads the YOLO weights (best.pt), processes an input image or video stream, and outputs bounding box coordinates with confidence scores.
+
+Purpose: To demonstrate how the model would be used in a real-world clinical setting to identify jaundice markers on an infant's skin.
+
+3. data.yaml
+The configuration file for the dataset.
+
+Contents: Paths to the train, val, and test image folders, along with the names of the classes (e.g., 0: jaundice, 1: normal).
+
+Purpose: It tells the YOLOv11 framework how to read the data and how many categories it needs to learn.
+
+4. Analysis_Report.pdf (or .docx)
+The technical document exported from the Whiskers AI tool.
+
+Contents: Structured tables and summaries identifying the best epoch (Epoch 49), accuracy trends, and an evaluation of the model's stability.
+
+Purpose: To provide a human-readable summary of the machine learning results for stakeholders or medical professionals.
+
+5. Folder Structure (/train, /valid, /test)
+Contents: Thousands of annotated images used to teach the model what jaundice looks like.
+
+Purpose: To ensure the model has enough variety in skin tones and lighting conditions to be accurate in a NICU environment.
